@@ -39,10 +39,10 @@ public struct LNSSignalStrength: View {
     
     public var body: some View {
         HStack(alignment: .center, spacing: 2) {
-            ForEach(0..<totalBars) { bar in
+            ForEach(0..<totalBars, id: \.self) { bar in
                 RoundedRectangle(cornerRadius: 3)
                     .divided(amount: (CGFloat(bar) + 1) / CGFloat(self.totalBars))
-                    .fill(Color.white.opacity(bar < self.bars ? 1 : 0.3))
+                    .fill(Color.primary.opacity(bar < self.bars ? 1 : 0.3))
             }
         }
     }
